@@ -15,6 +15,16 @@ def binary_search(array, target, start, end):
         return binary_search(array, target, mid+1, end)
 
 
+answer = 0
+while start <= end:
+    mid = (start+end)//2
+    if array[mid] == target:
+        answer = mid
+        break
+    if array[mid] > target:
+        start = mid+1
+    if array[mid] < target:
+        end = mid-1
 # count by range
 
 
