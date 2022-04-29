@@ -6,11 +6,8 @@ const Queue = function () {
 
 Queue.prototype = {
   size() {
-    if (this.storage[this.rear] === undefined) {
-      return 0;
-    } else {
-      return this.rear - this.front + 1;
-    }
+    if (this.storage[this.rear] === undefined) return 0;
+    else return this.rear - this.front + 1;
   },
   push(value) {
     if (this.size() === 0) this.storage["0"] = value;
