@@ -1,12 +1,11 @@
 # eratos
-import math
 
 n = int(input())
 is_prime = [True]*(n+1)
 
 
 def eratos(n):
-    for i in range(2, int(math.sqrt(n))+1):
+    for i in range(2, int(n**0.5)+1):
         if is_prime[i]:
             for j in range(i*2, n+1, i):
                 is_prime[j] = False
@@ -22,7 +21,7 @@ for i in range(2, n+1):
 
 def eratos(n):
     is_prime = [True] * (n+1)
-    for i in range(2, int(math.sqrt(n))+1):
+    for i in range(2, int(n**0.5)+1):
         if is_prime[i]:
             for j in range(i*2, n+1, i):
                 if is_prime[j]:
@@ -31,9 +30,9 @@ def eratos(n):
 
 
 def is_prime(n):
-    if n == 1:
+    if n < 2:
         return False
-    for i in range(2, int(math.sqrt(n))+1):
+    for i in range(2, int(n**0.5)+1):
         if n % i == 0:
             return False
     return True
